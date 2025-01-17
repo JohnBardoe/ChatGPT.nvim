@@ -38,9 +38,7 @@ M.complete = function()
               virt_text_pos = "overlay",
             })
           end)
-        end, {
-          animation_type_name = "dot",
-        })
+        end)
       end
       spinner:start()
     else

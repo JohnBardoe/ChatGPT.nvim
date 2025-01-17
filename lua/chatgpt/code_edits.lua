@@ -99,9 +99,7 @@ local spinner = Spinner:new(function(state)
     end
     display_input_suffix(state)
   end)
-end, {
-  text = Config.options.loading_text,
-})
+end)
 
 local show_progress = function()
   spinner:start()

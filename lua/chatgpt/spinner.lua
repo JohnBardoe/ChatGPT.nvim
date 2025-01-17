@@ -1,5 +1,7 @@
 -- Credits: https://github.com/charmbracelet/bubbles/blob/master/spinner/spinner.go
 
+local Config = require("chatgpt.config")
+
 local Spinner = {}
 Spinner.__index = Spinner
 
@@ -61,15 +63,11 @@ function Spinner.types()
   }
 end
 
-function Spinner:new(render_fn, opts)
-  opts = opts or {}
-  opts.animation_type_name = opts.animation_type_name or "points"
-  opts.text = opts.text or ""
-
+function Spinner:new(render_fn)
   self = setmetatable({}, Spinner)
-  self.animation_type = Spinner.types()[opts.animation_type_name]
+  self.animation_type = Spinner.types()[Config.options.animation_type_name]
   self.render_fn = render_fn
-  self.text = opts.text
+  self.text = Config.options.loading_text
   self.timer = nil
   self.frame = 1
 

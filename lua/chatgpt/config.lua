@@ -198,6 +198,7 @@ function M.defaults()
       active_session = "ErrorMsg",
       code_edit_result_title = "FloatBorder",
     },
+    animation_type_name = "dots"
   }
   return defaults
 end
